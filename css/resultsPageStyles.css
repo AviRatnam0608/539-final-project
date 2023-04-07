@@ -9,18 +9,34 @@ body {
   background: #fbfbfb;
 }
 
+.landing-page-bg {
+  background-image: url("../img/plateLeaf.jpg");
+  /* background-size: cover; */
+  width: auto;
+  height: 100%;
+}
+
 #landing-page-navbar {
-  color: black;
+  color: white;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 2%;
 }
 
+/* .landing-page-navbar div {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+  padding: 3%;
+  border-radius: 10px;
+  border: 1px solid rgba(43, 43, 43, 0.568);
+} */
+
 #content-section {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin: 3%;
 }
 
 .card {
@@ -51,6 +67,14 @@ body {
   color: #555555;
 }
 
+.load-more {
+  position: absolute;
+  left: 50%;
+  text-decoration: underline;
+  color: white;
+  /* margin: 5%; */
+}
+
 .card-headers img {
   width: 100%;
 }
@@ -77,9 +101,16 @@ body {
   border-radius: 10px;
 }
 
-.card-footer p:last-child {
+.card-footer .available {
   color: white;
   background: green;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.card-footer .unavailable {
+  color: white;
+  background: #cb2424;
   padding: 10px;
   border-radius: 10px;
 }
@@ -91,4 +122,9 @@ body {
   padding: 15px;
   background: #ffd800;
   border-radius: 300px;
+}
+
+.backs {
+  color: white;
+  text-decoration: none;
 }

@@ -9,9 +9,9 @@
       src="https://kit.fontawesome.com/fe075cf3a0.js"
       crossorigin="anonymous"
     ></script>
-    <title>Search Results</title>
+    <title>search results</title>
   </head>
-  <body onload="showData(7)">
+  <body onload="showData(7)" class="landing-page-bg">
     <header>
       <div id="landing-page-navbar">
         <div href="#">avinashr</div>
@@ -19,12 +19,21 @@
       </div>
     </header>
     <main>
-      <!-- <button onclick="showData(7)">click to show</button> -->
+      <!-- <form>
+        <input type="text" />
+        <input type=""/>
+      </form> -->
+      <a href="index.html" class="backs">
+        <i class="fa-solid fa-chevron-left"></i>
+        back
+      </a>
+      <!-- Cards go here -->
       <div id="content-section"></div>
+      <p class="load-more" onclick="showData(7)">load more</p>
+      <a href="#landing-page-navbar" class="tops">
+        <i class="fa-solid fa-chevron-up"></i>
+      </a>
     </main>
-    <a href="#landing-page-navbar" class="tops">
-      <i class="fa-solid fa-chevron-up"></i>
-    </a>
   </body>
   <script type="text/javascript" src="./js/fetchData.js"></script>
 </html>

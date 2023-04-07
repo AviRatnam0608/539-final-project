@@ -19,9 +19,20 @@ body {
   padding: 2%;
 }
 
-.landing-page-inner-navbar {
-  display: flex;
-  justify-content: space-between;
+.landing-page-navbar div {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+  padding: 3%;
+  border-radius: 10px;
+  border: 1px solid rgba(43, 43, 43, 0.568);
+}
+
+.landing-page-title {
+  background: rgba(255, 255, 255, 0.192);
+  backdrop-filter: blur(10px);
+  padding: 10%;
+  border-radius: 15px;
+  border: 1px solid rgba(43, 43, 43, 0.568);
 }
 
 .landing-page-content {
@@ -35,7 +46,7 @@ body {
 }
 
 .landing-page-search {
-  width: 100%;
+  width: auto;
   height: 10%;
   border: #eeeeee solid;
   border-radius: 8px;
