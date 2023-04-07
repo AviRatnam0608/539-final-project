@@ -1,2 +1,33 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <title>Food Check</title>
+  </head>
+  <body class="landing-page-bg">
+    <header>
+      <div class="landing-page-navbar">
+        <div href="#">avinashr</div>
+        <div href="#">browse all</div>
+      </div>
+    </header>
+    <div class="landing-page-content">
+      <h1 class="landing-page-title">search restaurants by cuisine</h1>
+      <form onsubmit="fetchData(event)">
+        <input
+          id="inputQuery"
+          type="text"
+          class="landing-page-search"
+          placeholder="..."
+        />
+      </form>
+      <a id="search-button" href="resultsPage.html">view all ____ results</a>
+    </div>
+    <footer>hello</footer>
+  </body>
+  <script type="text/javascript" src="./js/fetchData.js"></script>
 </html>

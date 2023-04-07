@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap");
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #fbfbfb;
+}
+
+#landing-page-navbar {
+  color: black;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2%;
+}
+
+#content-section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card {
+  background: #ffffff;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-column-gap: 5%;
+  grid-row-gap: 2.5%;
+  padding: 10px;
+  border: white solid;
+  box-shadow: 1px 3px 3px #c8c8c8;
+  border-radius: 10px;
+}
+
+.card img {
+  border-radius: 10px;
+  align-self: center;
+}
+
+.card-headers {
+  display: flex;
+  /* flex-direction: row; */
+  /* align-items: baseline; */
+  /* justify-content: space-between; */
+}
+
+.card-headers h3 {
+  color: #555555;
+}
+
+.card-headers img {
+  width: 100%;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  background: #fbfbfb;
+  padding: 0 5%;
+  border-radius: 10px;
+}
+
+.card-content div {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-footer {
+  grid-column: 1/-1;
+  background: #fbfbfb;
+  padding: 0 5%;
+  border-radius: 10px;
+}
+
+.card-footer p:last-child {
+  color: white;
+  background: green;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.tops {
+  position: fixed;
+  right: 10;
+  bottom: 10;
+  padding: 15px;
+  background: #ffd800;
+  border-radius: 300px;
+}
