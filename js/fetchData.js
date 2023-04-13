@@ -284,3 +284,13 @@ const filterByRating = (event) => {
     document.querySelector("#filter-options").textContent = "no results";
   }
 };
+
+const resetFilters = () => {
+  document.querySelector("#input-search").value = "";
+  document.querySelector("#ratingSearch").value = "";
+  document.querySelector("#priceSearch").value = "";
+  document.querySelector("#filter-options").innerHTML = "";
+  document.querySelectorAll(".toggleThis").forEach((element) => {
+    element.setAttribute("hidden", true);
+  });
+};

@@ -9,6 +9,23 @@ body {
   background: #ffffff;
 }
 
+main {
+  background: #fbfbfb;
+  padding: 5%;
+  border-radius: 15px;
+}
+
+#skip-to-content {
+  position: absolute;
+  left: -500px;
+  top: -500px;
+}
+
+#skip-to-content:focus {
+  left: 0px;
+  top: 0px;
+}
+
 .landing-page-bg {
   /* background-image: url("../img/plateLeaf.jpg"); */
   /* background-size: cover; */
@@ -144,6 +161,12 @@ input {
   border: solid #d8d8d8 1px;
   border-radius: 7px;
   padding: 2.5%;
+  font-size: 15px;
+}
+
+#priceSearch,
+#ratingSearch {
+  border-radius: 6px;
 }
 
 input:focus {
@@ -154,6 +177,11 @@ input:focus {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+  gap: 2.5%;
+}
+
+.search-buttons button {
+  display: none;
 }
 
 @media only screen and (min-width: 1200px) {
@@ -162,10 +190,9 @@ input:focus {
   }
 
   .search-options {
-    display: flex;
     justify-content: flex-start;
-    gap: 5%;
-    align-items: left;
+    gap: 15%;
+    align-items: flex-end;
   }
   #filter-options {
     display: grid;
@@ -189,5 +216,25 @@ input:focus {
 
   input:focus {
     background: #d8d8d8;
+  }
+
+  .search-buttons button {
+    display: initial;
+    height: 50%;
+    border-radius: 13px;
+    background: #d8d8d8;
+    border: solid #d8d8d8;
+    padding: 2%;
+  }
+
+  .search-buttons button:hover {
+    background: #ffffff;
+  }
+
+  .search-buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
   }
 }

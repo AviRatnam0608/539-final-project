@@ -12,6 +12,7 @@
     <title>search results</title>
   </head>
   <body onload="showData(7)" class="landing-page-bg">
+    <a id="skip-to-content" href="#content-section">skip to content</a>
     <header>
       <div id="landing-page-navbar">
         <!-- <div href="#">avinashr</div>
@@ -19,19 +20,22 @@
       </div>
     </header>
     <main>
-      <div class="search-options">
-        <form onsubmit="filterSearchResults(event)">
-          <label for="input-search"><h2>search</h2></label>
-          <input id="input-search" type="text" />
-        </form>
-        <form onsubmit="filterByPrice(event)">
-          <label for="priceSearch"><h2>price $</h2></label>
-          <input id="priceSearch" type="number" min="1" max="5" />
-        </form>
-        <form onsubmit="filterByRating(event)">
-          <label for="ratingSearch"><h2>rating ★</h2></label>
-          <input id="ratingSearch" type="number" min="1" max="5" />
-        </form>
+      <div class="search-buttons">
+        <div class="search-options">
+          <form onsubmit="filterSearchResults(event)">
+            <label for="input-search"><h2>search</h2></label>
+            <input id="input-search" type="text" />
+          </form>
+          <form onsubmit="filterByPrice(event)">
+            <label for="priceSearch"><h2>price $</h2></label>
+            <input id="priceSearch" type="number" min="1" max="5" />
+          </form>
+          <form onsubmit="filterByRating(event)">
+            <label for="ratingSearch"><h2>rating ★</h2></label>
+            <input id="ratingSearch" type="number" min="1" max="5" />
+          </form>
+        </div>
+        <button onclick="resetFilters()">reset</button>
       </div>
       <a href="index.html" class="backs">
         <i class="fa-solid fa-chevron-left"></i>
