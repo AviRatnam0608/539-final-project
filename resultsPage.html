@@ -14,20 +14,33 @@
   <body onload="showData(7)" class="landing-page-bg">
     <header>
       <div id="landing-page-navbar">
-        <div href="#">avinashr</div>
-        <div href="#">browse all</div>
+        <!-- <div href="#">avinashr</div>
+        <div href="#">browse all</div> -->
       </div>
     </header>
     <main>
-      <form onsubmit="filterResults(event)">
-        <label for="input-search">Search</label>
-        <input id="input-search" type="text" />
-      </form>
+      <div class="search-options">
+        <form onsubmit="filterSearchResults(event)">
+          <label for="input-search"><h2>search</h2></label>
+          <input id="input-search" type="text" />
+        </form>
+        <form onsubmit="filterByPrice(event)">
+          <label for="priceSearch"><h2>price $</h2></label>
+          <input id="priceSearch" type="number" min="1" max="5" />
+        </form>
+        <form onsubmit="filterByRating(event)">
+          <label for="ratingSearch"><h2>rating ★</h2></label>
+          <input id="ratingSearch" type="number" min="1" max="5" />
+        </form>
+      </div>
       <a href="index.html" class="backs">
         <i class="fa-solid fa-chevron-left"></i>
         back
       </a>
       <!-- Cards go here -->
+      <h2 class="toggleThis" hidden>search results</h2>
+      <div id="filter-options"></div>
+      <h2 class="toggleThis" hidden>other restaurants</h2>
       <div id="content-section"></div>
       <div class="load-more" onclick="showData(7)">load more</div>
       <a href="#landing-page-navbar" class="tops">

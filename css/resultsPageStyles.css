@@ -24,6 +24,12 @@ body {
   padding: 2%;
 }
 
+#filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 3%;
+}
 /* .landing-page-navbar div {
   background: rgba(255, 255, 255, 0.192);
   backdrop-filter: blur(10px);
@@ -74,6 +80,7 @@ body {
   left: 50%;
   text-decoration: underline;
   color: black;
+  cursor: pointer;
   /* margin: 5%; */
 }
 
@@ -128,14 +135,59 @@ body {
 
 .backs {
   text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+input {
+  background: #d8d8d8;
+  border: solid #d8d8d8 1px;
+  border-radius: 7px;
+  padding: 2.5%;
+}
+
+input:focus {
+  background: #d8d8d8;
+}
+
+.search-options {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 @media only screen and (min-width: 1200px) {
+  body {
+    padding: 0 10%;
+  }
+
+  .search-options {
+    display: flex;
+    justify-content: flex-start;
+    gap: 5%;
+    align-items: left;
+  }
+  #filter-options {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
   #content-section {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
   }
   .card:hover {
     box-shadow: 1px 6px 6px #c8c8c8;
+  }
+
+  input {
+    background: #d8d8d8;
+    border: solid #d8d8d8 1px;
+    border-radius: 13px;
+    padding: 10%;
+  }
+
+  input:focus {
+    background: #d8d8d8;
   }
 }
