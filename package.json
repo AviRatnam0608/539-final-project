@@ -1,0 +1,19 @@
+{
+  "name": "539-final-project",
+  "version": "1.0.0",
+  "description": "This project allows users to seaarch for restaurants based on their location, with other filter options available!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AviRatnam0608/539-final-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AviRatnam0608/539-final-project/issues"
+  },
+  "homepage": "https://github.com/AviRatnam0608/539-final-project#readme"
+}

@@ -6,11 +6,11 @@ html {
 
 body {
   font-family: "Lato", sans-serif;
-  background: #fbfbfb;
+  background: #ffffff;
 }
 
 .landing-page-bg {
-  background-image: url("../img/plateLeaf.jpg");
+  /* background-image: url("../img/plateLeaf.jpg"); */
   /* background-size: cover; */
   width: auto;
   height: 100%;
@@ -49,6 +49,8 @@ body {
   border: white solid;
   box-shadow: 1px 3px 3px #c8c8c8;
   border-radius: 10px;
+  text-decoration: none;
+  color: black;
 }
 
 .card img {
@@ -71,7 +73,7 @@ body {
   position: absolute;
   left: 50%;
   text-decoration: underline;
-  color: white;
+  color: black;
   /* margin: 5%; */
 }
 
@@ -125,6 +127,15 @@ body {
 }
 
 .backs {
-  color: white;
   text-decoration: none;
+}
+
+@media only screen and (min-width: 1200px) {
+  #content-section {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .card:hover {
+    box-shadow: 1px 6px 6px #c8c8c8;
+  }
 }

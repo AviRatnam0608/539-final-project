@@ -6,7 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./css/styles.css" />
     <?xml version="1.0" encoding="utf-8"?>
-
+    <script
+      src="https://kit.fontawesome.com/fe075cf3a0.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Food Check</title>
   </head>
   <body class="landing-page-bg">
@@ -17,15 +20,22 @@
       </div>
     </header>
     <div class="landing-page-content">
-      <h1 class="landing-page-title">search restaurants by cuisine</h1>
-      <form onsubmit="fetchData(event)">
-        <input
-          id="inputQuery"
-          type="text"
-          class="landing-page-search"
-          placeholder="..."
-        />
-      </form>
+      <label for="inputQuery">
+        <h1 class="landing-page-title">search restaurants by cuisine</h1>
+      </label>
+      <div class="searchStuff">
+        <form onsubmit="fetchData(event)">
+          <input
+            id="inputQuery"
+            type="text"
+            class="landing-page-search"
+            placeholder="..."
+          />
+        </form>
+        <button onclick="fetchData(event)">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </div>
       <div id="search-result"></div>
 
       <!-- <a id="search-button" href="resultsPage.html">view all ____ results</a> -->

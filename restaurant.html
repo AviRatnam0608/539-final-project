@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/restaurantDetails.css" />
+    <link rel="stylesheet" href="./css/resultsPageStyles.css" />
+    <script
+      src="https://kit.fontawesome.com/fe075cf3a0.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>restaurant details</title>
+  </head>
+  <body onload="showData(8)">
+    <a href="resultsPage.html" class="backs">
+      <i class="fa-solid fa-chevron-left"></i>
+      back
+    </a>
+    <div id="restaurant-info"></div>
+    <h2>more restaurants</h2>
+    <div id="content-section"></div>
+    <a href="#landing-page-navbar" class="tops">
+      <i class="fa-solid fa-chevron-up"></i>
+    </a>
+  </body>
+  <script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const restaurantName = urlParams.get("name");
+    console.log(restaurantName);
+    const data = JSON.parse(localStorage.getItem("searched-results"));
+    let filteredData = data["restaurants"].filter((element) => {
+      return element.name.toLowerCase() === restaurantName.toLowerCase();
+    });
+    filteredData = filteredData[0];
+
+    console.log(filteredData);
+
+    const altImgurl =
+      "https://cdn-img.mealme.ai/defb5abddaa9b1551fb1a1bd66f41309fe6e4dfc/68747470733a2f2f636e2d67656f312e756265722e636f6d2f7374617469632f6d6f62696c652d636f6e74656e742f656174732f706c616365686f6c6465725f696d616765732f706c616365686f6c6465725f696d6167655f67726f636572795f333030783330302e706e67";
+
+    const restaurantStructure = `
+    <div id="restaurant-details">
+        <div class="restaurant-headers">
+          <h2>${filteredData.name}</h2>
+          <h3>★ ${filteredData.weighted_rating_value.toFixed(1)}</h3>
+        </div>
+        <div class="restaurant-images">
+          <img
+            src=${
+              filteredData.food_photos[0]
+                ? filteredData.food_photos[0]
+                : altImgurl
+            }
+            alt="image of food"
+          />
+        </div>
+        <div class="restaurant-content">
+          <div><i class="fa-solid fa-phone"></i> ${
+            filteredData.phone_number
+          }</div>
+          <div><i class="fa-solid fa-clock"></i> ${
+            filteredData.is_open ? "open" : "closed"
+          }</div>
+        </div>
+        <ul class="restaurant-cuisines">
+          ${filteredData.cuisines.map((element) => {
+            return `<li>${element}</li>`;
+          })}
+        </ul>
+        <div class="restaurant-deli-options">
+          <h3>delivery options</h3>
+          <div class="restaurant-delivery-options">
+            <h5 class=${
+              filteredData.offers_first_party_delivery
+                ? "available"
+                : "unavailable"
+            }>${
+      filteredData.offers_first_party_delivery
+        ? "restaurant delivery available"
+        : "restaurant delivery unavailable"
+    }</h5>
+    <h5 class=${
+      filteredData.offers_third_party_delivery ? "available" : "unavailable"
+    }>${
+      filteredData.offers_third_party_delivery
+        ? "third party delivery available"
+        : "third party delivery unavailable"
+    }</h5>
+        </div>
+        </div>
+        <div class="restaurant-dinein-options">
+          <h3>dine-in options</h3>
+          <div class="restaurant-diningin-options">
+            <table>
+            ${Object.keys(filteredData.local_hours.dine_in).map((entry) => {
+              return `
+                <tr>
+                    <th>${entry}</th>
+                    <td>${filteredData.local_hours.dine_in[entry]}</td>
+                </tr>`;
+            })}
+            </table>
+          </div>
+        </div>
+        <div class="restaurant-address">
+          <h3>address</h3>
+          <p>
+            ${filteredData.address.street_addr},
+            ${filteredData.address.city},
+            ${filteredData.address.state},
+            ${filteredData.address.zipcode}
+          </p>
+        </div>
+        <div class="restaurant-description">
+          <h3>about us</h3>
+          <p>
+           ${
+             filteredData.description
+               ? filteredData.description
+               : "No description available"
+           }
+          </p>
+        </div>
+      </div>`;
+    document.querySelector("#restaurant-info").innerHTML = restaurantStructure;
+    // if (document.querySelector("#restaurant-info").innerHTML) {
+    //   const parent = document.querySelector("#restaurant-cuisines");
+    //   console.log(document.querySelector("#restaurant-cuisines"));
+    //   const children = parent.childNodes;
+    //   for (let i = 0; i < children; i += 2) {
+    //     parent.removeChild(children[i]);
+    //   }
+    // }
+    // document
+    //   .querySelector(".restaurant-delivery-options")
+    //   .removeChild(document.querySelector.firstChild);
+  </script>
+  <script type="text/javascript" src="./js/fetchData.js"></script>
+</html>

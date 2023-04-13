@@ -19,17 +19,17 @@
       </div>
     </header>
     <main>
-      <!-- <form>
-        <input type="text" />
-        <input type=""/>
-      </form> -->
+      <form onsubmit="filterResults(event)">
+        <label for="input-search">Search</label>
+        <input id="input-search" type="text" />
+      </form>
       <a href="index.html" class="backs">
         <i class="fa-solid fa-chevron-left"></i>
         back
       </a>
       <!-- Cards go here -->
       <div id="content-section"></div>
-      <p class="load-more" onclick="showData(7)">load more</p>
+      <div class="load-more" onclick="showData(7)">load more</div>
       <a href="#landing-page-navbar" class="tops">
         <i class="fa-solid fa-chevron-up"></i>
       </a>

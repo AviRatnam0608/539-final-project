@@ -1,0 +1,187 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  /* background: #fbfbfb; */
+  color: #2d2d2d;
+}
+
+body h2 {
+  padding: 0 3%;
+}
+
+#restaurant-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #fbfbfb;
+  border: solid #fbfbfb;
+  border-radius: 13px;
+  padding: 1% 5%;
+}
+
+.restaurant-headers {
+  grid-column: 1/-1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.restaurant-images {
+  grid-column: 1/-1;
+}
+
+.restaurant-images img {
+  width: 100%;
+  border-radius: 13px;
+}
+
+.restaurant-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  grid-column: 1/-1;
+  /* background: red; */
+  padding: 5% 0;
+}
+
+.restaurant-cuisines {
+  display: flex;
+  grid-column: 1/-1;
+  align-items: center;
+  flex-direction: row;
+  gap: 10px;
+  list-style-type: none;
+  justify-content: center;
+  padding: 5% 0;
+  overflow: auto;
+}
+
+.restaurant-cuisines li {
+  background: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.restaurant-dinein-options {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/-1;
+}
+
+.restaurant-deli-options {
+  display: flex;
+  flex-direction: column;
+  grid-column: 1/-1;
+}
+
+.restaurant-options h3 {
+  margin-top: 1%;
+}
+
+.restaurant-delivery-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  /* padding: 2%; */
+  gap: 2%;
+}
+
+.restaurant-delivery-options h5.available {
+  background: green;
+  padding: 2%;
+  color: white;
+  border-radius: 13px;
+}
+
+.restaurant-delivery-options h5.unavailable {
+  background: #cb2424;
+  padding: 2%;
+  color: white;
+  border-radius: 13px;
+}
+
+table tr {
+  text-align: center;
+}
+
+.restaurant-address {
+  grid-column: 1/-1;
+}
+
+.restaurant-description {
+  grid-column: 1/-1;
+}
+
+tr {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media only screen and (min-width: 1200px) {
+  body {
+    padding: 0 10%;
+  }
+
+  #restaurant-details {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .restaurant-headers {
+    justify-content: left;
+    gap: 2%;
+    grid-column: 1/2;
+  }
+
+  .restaurant-images {
+    grid-column: 1/2;
+  }
+
+  .restaurant-images img {
+    width: 100%;
+  }
+  .restaurant-content {
+    grid-column: 2/-1;
+    grid-row-start: 1;
+    justify-content: right;
+    align-items: center;
+    gap: 5%;
+  }
+  .restaurant-cuisines {
+    grid-column: 1/-1;
+    flex-wrap: wrap;
+    gap: 1%;
+  }
+  .restaurant-deli-options {
+    grid-column: 2/3;
+    grid-row-start: 3;
+    padding: 0 10%;
+  }
+
+  .restaurant-deli-options h5 {
+    height: 50%;
+  }
+
+  .restaurant-delivery-options {
+    justify-content: space-evenly;
+  }
+
+  .restaurant-address {
+    grid-column: 3/-1;
+    grid-row: 2;
+    padding: 0 10%;
+  }
+  .restaurant-description {
+    grid-column: 2/3;
+    grid-row: 2;
+    padding: 0 10%;
+  }
+  .restaurant-dinein-options {
+    grid-column: 3/-1;
+    grid-row-start: 3;
+    padding: 0 10%;
+  }
+}

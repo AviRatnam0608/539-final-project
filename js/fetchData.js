@@ -1,4 +1,6 @@
-const API_KEY = "296755af1ea74ca99f2c1a13314f5f83";
+// import cardTemplate from "./cardTemplate";
+
+const API_KEY = "a611bb0a0300468584eb2f52d9379533";
 const END_POINT =
   "https://api.spoonacular.com/food/restaurants/search?cuisine=";
 
@@ -17,8 +19,8 @@ style="
   display: block;
   shape-rendering: auto;
 "
-width="100px"
-height="100px"
+width="75px"
+height="75px"
 viewBox="0 0 100 100"
 preserveAspectRatio="xMidYMid"
 >
@@ -65,46 +67,99 @@ const fetchData = async (event) => {
 };
 
 const contentSection = document.querySelector("#content-section");
+const loadMore = document.querySelector("#load-more");
+const noContent = `<div>No search results :(</div>`;
 
 const showData = (n) => {
   console.log(resultsArray);
+  // resultsArray["restaurants"].length !== 0
+  //   ?
+  //   : loadMore.setAttribute(hidden);
   resultsArray["restaurants"]
     .slice(increment, (increment = increment + n))
     .forEach((element, i) => {
-      const cardDiv = `<div class="card" key=${i}>
-    <div class="card-headers">
-      <img
-        src=${element.logo_photos[0]}
-        alt=${element.name}
-      />
-    </div>
-    <div class="card-content">
-      <h3>${element.name}</h3>
-      <div>
-        <h3>${
-          element.dollar_signs ? "$".repeat(element.dollar_signs) : "N/A"
-        }</h3>
-        <h4>★ ${
-          element.weighted_rating_value
-            ? element.weighted_rating_value.toFixed(1)
-            : "N/A"
-        }</h4>
-      </div>
-    </div>
-    <div class="card-footer">
-      <p>${element.address.street_addr}</p>
-      <p class=${
-        element.offers_first_party_delivery ? "available" : "unavailable"
-      }>
-      ${
-        element.offers_first_party_delivery
-          ? "Delivery Available"
-          : "Delivery Not Available"
-      }</p>
-    </div>
-  </div>`;
+      const cardDiv = `
+      <a class="card" key=${i} href="restaurant.html?name=${element.name}">
+      <div class="card-headers">
+            <img
+              src=${element.logo_photos[0]}
+              alt=${element.name}
+            />
+          </div>
+          <div class="card-content">
+            <h3>${element.name}</h3>
+            <div>
+              <h3>${
+                element.dollar_signs ? "$".repeat(element.dollar_signs) : "N/A"
+              }</h3>
+              <h4>★ ${
+                element.weighted_rating_value
+                  ? element.weighted_rating_value.toFixed(1)
+                  : "N/A"
+              }</h4>
+            </div>
+          </div>
+          <div class="card-footer">
+            <p>${element.address.street_addr}</p>
+            <p class=${
+              element.offers_first_party_delivery ? "available" : "unavailable"
+            }>
+            ${
+              element.offers_first_party_delivery
+                ? "Delivery Available"
+                : "Delivery Not Available"
+            }</p>
+          </div>
+        </a>`;
       const range = document.createRange();
       const fragment = range.createContextualFragment(cardDiv);
       contentSection.appendChild(fragment);
     });
+};
+
+const filterResults = (event) => {
+  event.preventDefault();
+  const filterSearchValue = document
+    .querySelector("#input-search")
+    .value.toLowerCase();
+  resultsArray["restaurants"].filter((element, i) => {
+    if (element.name.toLowerCase().includes(filterSearchValue)) {
+      const cardDiv = `<div class="card" key=${i}>
+        <div class="card-headers">
+          <img
+            src=${element.logo_photos[0]}
+            alt=${element.name}
+          />
+        </div>
+        <div class="card-content">
+          <h3>${element.name}</h3>
+          <div>
+            <h3>${
+              element.dollar_signs ? "$".repeat(element.dollar_signs) : "N/A"
+            }</h3>
+            <h4>★ ${
+              element.weighted_rating_value
+                ? element.weighted_rating_value.toFixed(1)
+                : "N/A"
+            }</h4>
+          </div>
+        </div>
+        <div class="card-footer">
+          <p>${element.address.street_addr}</p>
+          <p class=${
+            element.offers_first_party_delivery ? "available" : "unavailable"
+          }>
+          ${
+            element.offers_first_party_delivery
+              ? "Delivery Available"
+              : "Delivery Not Available"
+          }</p>
+        </div>
+      </div>`;
+      const range = document.createRange();
+      const fragment = range.createContextualFragment(cardDiv);
+      contentSection.appendChild(fragment);
+      console.log(element.name);
+    }
+  });
 };
